@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PETRA")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+3ab203350bfa406492b31a3913f0a4b621897e34")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+f691ef4770c269d141d5162022db8392dc621418")]
 [assembly: System.Reflection.AssemblyProductAttribute("PETRA")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PETRA")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

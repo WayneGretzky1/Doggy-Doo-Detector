@@ -7,7 +7,7 @@
 
     For more information on package manifest files, see http://go.microsoft.com/fwlink/?LinkID=241727
   -->
-  <Identity Name="com.companyname.petra" Publisher="CN=brock" Version="0.1.0.0" ProcessorArchitecture="x86" />
+  <Identity Name="com.companyname.petra" Publisher="CN=brock" Version="0.1.1.0" ProcessorArchitecture="x86" />
   <mp:PhoneIdentity PhoneProductId="2A277850-282C-4D4F-B072-3B22F27ABCE7" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>PETRA</DisplayName>
