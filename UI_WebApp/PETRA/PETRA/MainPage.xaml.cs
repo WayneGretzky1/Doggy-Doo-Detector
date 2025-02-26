@@ -11,6 +11,7 @@
 
         private void OnCounterClicked(object sender, EventArgs e)
         {
+            // test comment
             count+=10;
 
             if (count == 1)
