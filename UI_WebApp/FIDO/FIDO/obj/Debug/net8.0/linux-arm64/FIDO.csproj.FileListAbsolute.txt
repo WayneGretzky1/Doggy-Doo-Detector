@@ -1,0 +1,6 @@
+C:\Users\brock\Git\Doggy-Doo-Detector\UI_WebApp\FIDO\FIDO\obj\Debug\net8.0\linux-arm64\FIDO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\brock\Git\Doggy-Doo-Detector\UI_WebApp\FIDO\FIDO\obj\Debug\net8.0\linux-arm64\FIDO.AssemblyInfoInputs.cache
+C:\Users\brock\Git\Doggy-Doo-Detector\UI_WebApp\FIDO\FIDO\obj\Debug\net8.0\linux-arm64\FIDO.AssemblyInfo.cs
+C:\Users\brock\Git\Doggy-Doo-Detector\UI_WebApp\FIDO\FIDO\obj\Debug\net8.0\linux-arm64\FIDO.csproj.CoreCompileInputs.cache
+C:\Users\brock\Git\Doggy-Doo-Detector\UI_WebApp\FIDO\FIDO\obj\Debug\net8.0\linux-arm64\FIDO.sourcelink.json
+C:\Users\brock\Git\Doggy-Doo-Detector\UI_WebApp\FIDO\FIDO\obj\Debug\net8.0\linux-arm64\FIDO.csproj.AssemblyReference.cache
