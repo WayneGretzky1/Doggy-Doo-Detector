@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "r/zK502Vey8=",
+  "dgSpecHash": "TbUuSw9kHqY=",
   "success": true,
   "projectFilePath": "C:\\Users\\brock\\Git\\Doggy-Doo-Detector\\UI_WebApp\\PETRA\\PETRA\\PETRA.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\brock\\.nuget\\packages\\communitytoolkit.mvvm\\8.4.0\\communitytoolkit.mvvm.8.4.0.nupkg.sha512",
     "C:\\Users\\brock\\.nuget\\packages\\googlegson\\2.11.0.3\\googlegson.2.11.0.3.nupkg.sha512",
     "C:\\Users\\brock\\.nuget\\packages\\microsoft.extensions.configuration\\9.0.0\\microsoft.extensions.configuration.9.0.0.nupkg.sha512",
     "C:\\Users\\brock\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\9.0.0\\microsoft.extensions.configuration.abstractions.9.0.0.nupkg.sha512",
