@@ -1,6 +1,0 @@
-C:\Users\brock\Git\Doggy-Doo-Detector\UI_WebApp\working\working\obj\Debug\net8.0\linux-arm64\working.csproj.AssemblyReference.cache
-C:\Users\brock\Git\Doggy-Doo-Detector\UI_WebApp\working\working\obj\Debug\net8.0\linux-arm64\working.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\brock\Git\Doggy-Doo-Detector\UI_WebApp\working\working\obj\Debug\net8.0\linux-arm64\working.AssemblyInfoInputs.cache
-C:\Users\brock\Git\Doggy-Doo-Detector\UI_WebApp\working\working\obj\Debug\net8.0\linux-arm64\working.AssemblyInfo.cs
-C:\Users\brock\Git\Doggy-Doo-Detector\UI_WebApp\working\working\obj\Debug\net8.0\linux-arm64\working.csproj.CoreCompileInputs.cache
-C:\Users\brock\Git\Doggy-Doo-Detector\UI_WebApp\working\working\obj\Debug\net8.0\linux-arm64\working.sourcelink.json
