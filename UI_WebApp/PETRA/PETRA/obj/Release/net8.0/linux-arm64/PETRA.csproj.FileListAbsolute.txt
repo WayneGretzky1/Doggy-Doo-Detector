@@ -1,6 +1,0 @@
-C:\Users\brock\Git\Doggy-Doo-Detector\UI_WebApp\PETRA\PETRA\obj\Release\net8.0\linux-arm64\PETRA.csproj.AssemblyReference.cache
-C:\Users\brock\Git\Doggy-Doo-Detector\UI_WebApp\PETRA\PETRA\obj\Release\net8.0\linux-arm64\PETRA.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\brock\Git\Doggy-Doo-Detector\UI_WebApp\PETRA\PETRA\obj\Release\net8.0\linux-arm64\PETRA.AssemblyInfoInputs.cache
-C:\Users\brock\Git\Doggy-Doo-Detector\UI_WebApp\PETRA\PETRA\obj\Release\net8.0\linux-arm64\PETRA.AssemblyInfo.cs
-C:\Users\brock\Git\Doggy-Doo-Detector\UI_WebApp\PETRA\PETRA\obj\Release\net8.0\linux-arm64\PETRA.csproj.CoreCompileInputs.cache
-C:\Users\brock\Git\Doggy-Doo-Detector\UI_WebApp\PETRA\PETRA\obj\Release\net8.0\linux-arm64\PETRA.sourcelink.json
