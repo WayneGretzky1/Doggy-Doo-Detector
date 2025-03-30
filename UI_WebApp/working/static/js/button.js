@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         visibleImages.forEach((image, index) => {
             const link = document.createElement("a");
             link.href = "#";
-            link.textContent = `Object ${index + 1}`;
+            link.textContent = `Image ${index + 1}`;
             link.classList.add("image-link");
             link.addEventListener("click", () => showImage(image, index));
             imageLinksContainer.appendChild(link);
