@@ -8,6 +8,7 @@ import adafruit_mlx90640
 import numpy as np
 import os
 import cv2
+import datetime
 
 # Initialize sensor
 i2c = busio.I2C(board.SCL, board.SDA, frequency=400000)
@@ -113,9 +114,10 @@ def thermal_loop():
                     if not os.path.exists(image_path):
                         os.makedirs(image_path)
                     files = os.listdir(image_path)
+                    date = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
                     num_images = len(files)
                     if(num_images <= max_images):
-                        file_path = image_path + "center_screenshot_" + str(num_images) +".jpg"
+                        file_path = image_path + "center_screenshot_" + date +".jpg"
                         cv2.imwrite(file_path, screenshot)
                     
                     
