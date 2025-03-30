@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Stocks</title>
+        <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+        <script src="/static/js/stock.js"></script>
+    </head>
+    
+    <body>
+
+    <div class="flex-container">
+        <div><a href="/static/html/myschedule.html">My Schedule</a></div>
+        <div><a href="/static/html/myform.html">Form Input</a></div>
+        <div><a href="/static/html/aboutme.html">About Me</a></div>
+        <div><a href="/static/html/stocks.html">My Stocks</a></div>
+    </div>
+    <h1>My Stocks</h1>
+
+    <form id="stockForm">
+        <label for="symbol">Enter Stock Symbol</label><br>
+        <input type="text" name="symbol" id="symbol" size="25" maxlength="50">
+        <button type="submit">Get Stock Data</button>
+    </form>
+    API Response
+    <div id="stockdata-panel"></div>
+    </body>
+</html>

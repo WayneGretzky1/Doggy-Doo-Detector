@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <title>testServer</title>
+    <style>
+        div{
+            text-align:center;
+            margin-bottom: 5%;
+        }
+        #links ul li{
+            display: inline;
+            margin-right: 30px;
+        }
+        label{
+          margin-right: 5px;
+        }
+    </style>
+  </head>
+  <body>
+  <center>
+    <h1>testServer Page</h1></br>
+  </center>
+  <div id='links'>
+    <ul>
+        <li> <a href="/static/img/coffman.png"> Coffman Picture</a> </li>
+        <li> <a href="/static/html/Coffman_N_OuttaSpace.html"> Coffman + OuttaSpace</a> </li>
+        <li> <a href="/static/html/OuttaSpace.html"> OuttaSpace MP3</a> </li>
+    </ul>
+  </div>
+
+  <div>
+    <form action="/redirect" method="GET">
+      <label for="searchInput">Redirect to YouTube: </label>
+      <input type='text' name='query_string' id='searchInput' required/>
+      <button type='submit'> Search </button>
+    </form>
+  </div>
+<hr>
+  <div>
+    <a href="/static/html/myform.html"> Go to your add-event (myform) page</a>
+  </div>
+  </body>
+</html>

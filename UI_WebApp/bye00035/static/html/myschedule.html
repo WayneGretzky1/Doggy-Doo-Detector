@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Brock's weekly schedule</title>
+        <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+        <script src="/static/js/script.js"></script>
+        <script type="module" src="/static/js/map.js"></script>
+    </head>
+    
+    <body>
+
+    <div class="flex-container">
+        <div><a href="/static/html/myschedule.html">My Schedule</a></div>
+        <div><a href="/static/html/myform.html">Form Input</a></div>
+        <div><a href="/static/html/aboutme.html">About Me</a></div>
+        <div><a href="/static/html/stocks.html">My Stocks</a></div>
+        
+    </div>
+
+    <!-- http://localhost:4131/myschedule.html -->
+
+    
+    <h1>My Weekly Schedule</h1>
+
+    <!-- Table of 5 events: Day, event, time, location, phone number, url -->
+    <div class="container">
+        <div class="table">
+            <table id="myschedule">
+                <tr ><th>Day</th><th>Event</th><th>Time</th><th>Event location (virtual or physical)</th><th>Phone number</th><th>URL</th></tr>
+                
+                <tr onmouseover="showBigPic(1)"><td>Monday</td><td>CSCI 4131 lecture</td><td>11:15am - 12:30pm</td><td>Anderson Hall 350<img src="/static/img/Anderson.jpg" alt="Anderson"></td><td>(612) 626-7305</td><td><a href="https://umtc.catalog.prod.coursedog.com/courses/7906541">CSCI 4131 info</a></td></tr>
+                <tr onmouseover="showBigPic(2)" id="Pillsbury"><td>Tuesday</td><td>ENGL 1031 lecture</td><td>1pm - 2:15pm</td><td>310 Pillsbury Dr SE, Minneapolis, MN 55455<img src="/static/img/shepherd.jpg" alt="Shepherd"></td><td>No phone number</td><td><a href="https://umtc.catalog.prod.coursedog.com/courses/8178561">ENGL 1031 info</a></td></tr>
+                <tr onmouseover="showBigPic(3)"><td>Wednsday</td><td>CSCI 4131 lecture</td><td>11:15am - 12:30pm</td><td>Anderson Hall 350<img src="/static/img/Anderson.jpg" alt="Anderson"></td><td>(612) 626-7305</td><td><a href="https://umtc.catalog.prod.coursedog.com/courses/7906541">CSCI 4131 info</a></td></tr>
+                <tr onmouseover="showBigPic(4)"><td>Thursday</td><td>CSCI 5609 lecture</td><td>2:30pm - 3:45pm</td><td>Keller Hall 3-115<img src="/static/img/keller.jpg" alt="Keller"></td><td>No phone number</td><td><a href="https://umtc.catalog.prod.coursedog.com/courses/7930771">CSCI 5609 info</a></td></tr>
+                <tr onmouseover="showBigPic(5)" id="YMCA"><td>Friday</td><td>Volunteer University YMCA</td><td>9:00am - 11am</td><td>1801 University Ave SE, Minneapolis, MN 55414<img src="/static/img/track.jpg" alt="track"></td><td>(612)-275-9496</td><td><a href="https://www.ymcanorth.org/locations/university_ymca">University YMCA website</a></td></tr>
+                <tr onmouseover="showBigPic(6)" id="Afton"><td>Saturday</td><td>Skiing at Afton Alps</td><td>11am - 6pm</td><td>6800 Peller Ave S, Hastings, MN<img src="/static/img/swim.jpg" alt="Swim"></td><td>(651) 436-5245</td><td><a href="https://www.aftonalps.com/">Afton Alps website</a></td></tr>
+                <tr onmouseover="showBigPic(7)" id="VanCleve"><td>Sunday</td><td>Pond hockey at VanCleve Park</td><td>5pm - 7pm</td><td>901 15th Ave SE, Minneapolis, MN 55414<img src="/static/img/vanCleve.jpg" alt="vanCleve"></td><td>No phone number</td><td><a href="https://www.minneapolisparks.org/parks-destinations/parks-lakes/van_cleve_park/">Van Cleve park website</a></td></tr>
+            </table>
+        </div>
+
+        <div class="picture">
+            <img id="big" src="/static/img/gophers-mascot.png" alt="gophers-mascot" class="picture">
+            <button id="startButton" onclick="start()" height="50" width="50">Start</button>
+            <button id="stopButton" onclick="stop()" height="50" width="50">Stop</button>
+        </div>
+    </div>
+
+    <div class="map-container">
+        <div id="directions-panel">
+            <h3>Directions</h3>
+            <!-- Directions content will appear here -->
+        </div>
+        <div id="maps"></div>
+        <div id="floating-panel">
+            <form id="directionForm">
+                <label for="destination">Direction to</label><br>
+                <input type="text" name="destination" id="destination" size="25" maxlength="50">
+                
+                <label>by</label><br>
+                <input type="radio" id="walking" name="mode" value="walking">
+                <label for="walking">WALK</label><br>
+                <input type="radio" id="driving" name="mode" value="driving" required>
+                <label for="driving">DRIVE</label><br>
+                <input type="radio" id="transit" name="mode" value="transit">
+                <label for="transit">TRANSIT</label><br>
+
+                <button type="submit">Go</button>
+
+            </form>
+        </div>
+        <!-- This is a reference from student maps demo -->
+            <script>
+            ((g) => {
+                var h,
+                a,
+                k,
+                p = "The Google Maps JavaScript API",
+                c = "google",
+                l = "importLibrary",
+                q = "__ib__",
+                m = document,
+                b = window;
+                b = b[c] || (b[c] = {});
+                var d = b.maps || (b.maps = {}),
+                r = new Set(),
+                e = new URLSearchParams(),
+                u = () =>
+                    h ||
+                    (h = new Promise(async (f, n) => {
+                    await (a = m.createElement("script"));
+                    e.set("libraries", [...r] + "");
+                    for (k in g)
+                        e.set(
+                        k.replace(/[A-Z]/g, (t) => "_" + t[0].toLowerCase()),
+                        g[k],
+                        );
+                    e.set("callback", c + ".maps." + q);
+                    a.src = `https://maps.${c}apis.com/maps/api/js?` + e;
+                    d[q] = f;
+                    a.onerror = () => (h = n(Error(p + " could not load.")));
+                    a.nonce = m.querySelector("script[nonce]")?.nonce || "";
+                    m.head.append(a);
+                    }));
+                d[l]
+                ? console.warn(p + " only loads once. Ignoring:", g)
+                : (d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)));
+            })({
+                key: "AIzaSyC8YAo7JOlREtdHWG_bDT97FQy9hjODnsQ",
+                v: "weekly",
+                // Use the 'v' parameter to indicate the version to use (weekly, beta, alpha, etc.).
+                // Add other bootstrap parameters as needed, using camel case.
+            });
+            </script>
+    
+    </div>
+    
+    <!-- <pre id="output"></pre> -->
+    </body>
+
+
+</html>

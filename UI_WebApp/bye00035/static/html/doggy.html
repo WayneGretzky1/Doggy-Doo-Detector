@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Thermal Camera Stream</title>
+        <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+        <script src="/static/js/button.js"></script>
+    </head>
+    <body>
+        <header>
+            <img id="header" src="/static/img/header.png" alt="teamlogo" class="header">
+        </header>
+        
+        <div class="container">
+            <div class="feed">
+                <img src="/static/img/live.png" alt="live" height="50" width="100"/>
+                <img src="{{ url_for('video_feed') }}" alt="Feed" height="300" width="300"/>
+            </div>
+            <div id="imageLinks"></div>
+            <img id="displayedImage" alt="Selected Image" height="300" width="300">
+            <button id="removeButton">Remove Object</button>
+        </div>
+    </body>
+</html>
