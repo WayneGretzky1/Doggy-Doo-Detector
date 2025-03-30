@@ -1,8 +1,32 @@
 // Array of 10 images (Replace these with actual image URLs)
-const imageArray = [
-    "/static/img/blegen.jpg", "/static/img/Anderson.jpg", "/static/img/breakfast.jpg", "/static/img/bruininks.jpg", "/static/img/coffman.jpg",
-    "/static/img/blegen.jpg", "/static/img/Anderson.jpg", "/static/img/breakfast.jpg", "/static/img/bruininks.jpg", "/static/img/coffman.jpg"
-];
+let imageArray = Array(12).fill("");
+async function fetchImages() {
+    try {
+        const response = await fetch('/get-images'); // Fetch list of images from Flask server
+        if (!response.ok) throw new Error("Failed to fetch images");
+
+        const images = await response.json(); // Parse JSON response
+        const imageArray = images.map(file => `../data/${file}`); // Construct full paths
+        console.log(imageArray); // Updated list of images
+
+        // Example: Updating an image container dynamically
+        const container = document.getElementById("image-container");
+        container.innerHTML = ""; // Clear existing images
+        imageArray.forEach(imgSrc => {
+            const img = document.createElement("img");
+            img.src = imgSrc;
+            img.alt = "Dynamic Image";
+            container.appendChild(img);
+        });
+
+    } catch (error) {
+        console.error("Error fetching images:", error);
+    }
+}
+
+// Call the function when the page loads
+document.addEventListener("DOMContentLoaded", fetchImages);
+
 
 let visibleImages = []; // Stores the current 5 images
 let hiddenImages = [...imageArray]; // Stores the remaining images
