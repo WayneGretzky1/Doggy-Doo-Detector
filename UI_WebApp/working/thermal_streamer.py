@@ -46,7 +46,7 @@ def video_feed():
 
 
 # Path to the dynamically created images
-IMAGE_FOLDER = os.path.join(os.getcwd(), 'data')
+IMAGE_FOLDER = os.path.join(os.getcwd(), 'static/data')
 
 @app.route('/get-images')
 def get_images():
@@ -151,7 +151,7 @@ def thermal_loop():
                     date = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
                     num_images = len(files)
                     if(num_images <= max_images):
-                        file_path = image_path + "center_screenshot_" + date +".jpg"
+                        file_path = image_path + date +".jpg"
                         cv2.imwrite(file_path, screenshot)
                     
                     
