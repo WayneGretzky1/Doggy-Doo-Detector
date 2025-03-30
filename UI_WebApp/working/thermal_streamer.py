@@ -1,7 +1,7 @@
 import time
 import io
 import threading
-from flask import Flask, Response, render_template
+from flask import Flask, Response, render_template, jsonify, send_from_directory
 import board
 import busio
 import adafruit_mlx90640
@@ -43,6 +43,27 @@ def index():
 @app.route('/video_feed')
 def video_feed():
     return Response(generate_stream(), mimetype='multipart/x-mixed-replace; boundary=frame')
+
+
+# Path to the dynamically created images
+IMAGE_FOLDER = os.path.join(os.getcwd(), 'data')
+
+@app.route('/get-images')
+def get_images():
+    """Returns a list of image filenames from the data folder."""
+    try:
+        images = [file for file in os.listdir(IMAGE_FOLDER) if file.endswith(('.jpg', '.jpeg'))]
+        return jsonify(images)
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/data/<path:filename>')
+def serve_image(filename):
+    """Serves images from the data directory."""
+    return send_from_directory(IMAGE_FOLDER, filename)
+
+
+
 
 def generate_stream():
     global output_frame, lock
