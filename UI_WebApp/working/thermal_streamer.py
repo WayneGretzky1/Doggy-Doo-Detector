@@ -1,7 +1,7 @@
 import time
 import io
 import threading
-from flask import Flask, Response, render_template, jsonify, send_from_directory
+from flask import Flask, Response, request, render_template, jsonify, send_from_directory
 import board
 import busio
 import adafruit_mlx90640
@@ -62,7 +62,20 @@ def serve_image(filename):
     """Serves images from the data directory."""
     return send_from_directory(IMAGE_FOLDER, filename)
 
+@app.route('/delete-image', methods=['POST'])
+def delete_image():
+    try:
+        data = request.get_json()
+        filename = data.get("filename")
+        file_path = os.path.join(IMAGE_FOLDER, filename)
 
+        if os.path.exists(file_path):
+            os.remove(file_path)
+            return jsonify({"message": "Image deleted successfully"}), 200
+        else:
+            return jsonify({"error": "File not found"}), 404
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 
 def generate_stream():
