@@ -17,9 +17,13 @@
                 <img src="{{ url_for('static', filename='img/live.png')}}" alt="live" height="50" width="100"/>
                 <img src="{{ url_for('video_feed') }}" alt="Feed" height="300" width="300"/>
             </div>
-            <div id="imageLinks"></div>
-            <img id="displayedImage" alt="Selected Image" height="300" width="300">
-            <button id="removeButton">Remove Object</button>
+
+            <div id="imageContainer">
+                <div id="imageTitle">No photo selected</div>
+                <img id="displayedImage" style="display: none;" />
+                <button id="removeButton" style="display: none;">Remove</button>
+                <div id="imageLinks"></div>
+            </div>
         </div>
     </body>
 </html>

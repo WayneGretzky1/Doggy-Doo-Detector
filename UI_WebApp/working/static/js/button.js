@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const imageLinksContainer = document.getElementById("imageLinks");
     const displayedImage = document.getElementById("displayedImage"); // Ensure it's an <img> tag
     const removeButton = document.getElementById("removeButton");
+    const imageTitle = document.getElementById("imageTitle"); // Get the title container
 
     async function fetchImages() {
         try {
@@ -46,6 +47,19 @@ document.addEventListener("DOMContentLoaded", async () => {
         displayedImage.style.display = "block";
         removeButton.style.display = "inline-block";
         currentImage = index;
+
+        // Extract the filename and update the title
+        const filename = imageSrc.split('/').pop().replaceAll('_', ' ').replace('.jpg', '');
+        let words = filename.split(" ");
+        let date = words[0];
+        let time = words[1].replaceAll("-", ":");
+        const title = date + " " + time;
+        console.log(time);
+
+
+        
+
+        imageTitle.textContent = title || "No photo selected";
     }
 
     removeButton.addEventListener("click", async function () {
@@ -65,16 +79,16 @@ document.addEventListener("DOMContentLoaded", async () => {
                 if (hiddenImages.length > 0) {
                     visibleImages.push(hiddenImages.shift()); // Replace with another if available
                 }
-    
+
                 displayedImage.style.display = "none";
                 removeButton.style.display = "none";
+                imageTitle.textContent = "No photo selected"; // Reset the title
                 renderLinks();
             } catch (error) {
                 console.error("Error deleting image:", error);
             }
         }
     });
-    
 
     await fetchImages(); // Fetch images and initialize UI
 });
